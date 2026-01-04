@@ -19,10 +19,24 @@ export const useDeepfakeAnalysis = () => {
     // Simulate AI processing time
     await new Promise((resolve) => setTimeout(resolve, 2500));
 
-    // For demo purposes, generate random analysis
+    // For demo purposes, generate deterministic analysis from the image data
     // In a real app, this would send the image to an AI model
-    const isDeepfake = Math.random() > 0.5;
-    const confidence = Math.floor(Math.random() * 40) + (isDeepfake ? 50 : 10);
+    const hashString = (str: string) => {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = (hash << 5) - hash + str.charCodeAt(i);
+        hash |= 0;
+      }
+      return Math.abs(hash);
+    };
+
+    const hash = hashString(imageData);
+
+    const isDeepfake = hash % 2 === 0;
+
+    const confidence = isDeepfake
+      ? 60 + (hash % 30) // 60–89
+      : 10 + (hash % 30); // 10–39
 
     const deepfakeReasons = [
       "Inconsistent lighting detected around facial features",
@@ -48,9 +62,11 @@ export const useDeepfakeAnalysis = () => {
       "When in doubt, don't share!",
     ];
 
+    const reasonCount = 3 + (hash % 2);
+
     const selectedReasons = isDeepfake
-      ? deepfakeReasons.slice(0, 3 + Math.floor(Math.random() * 2))
-      : authenticReasons.slice(0, 3 + Math.floor(Math.random() * 2));
+      ? deepfakeReasons.slice(0, reasonCount)
+      : authenticReasons.slice(0, reasonCount);
 
     setResult({
       isDeepfake,
