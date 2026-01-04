@@ -6,7 +6,6 @@ import AnalysisResult from "@/components/AnalysisResult";
 import EducationSection from "@/components/EducationSection";
 import { useDeepfakeAnalysis } from "@/hooks/useDeepfakeAnalysis";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, RefreshCw } from "lucide-react";
 
 export default function Index() {
   const analyzerRef = useRef<HTMLDivElement>(null);
@@ -36,7 +35,7 @@ export default function Index() {
           />
 
           {selectedFile && (
-            <div className="flex justify-center gap-3 mt-6">
+            <div className="flex justify-center items-center gap-3 mt-6">
               <Button
                 onClick={() => analyzeImage(selectedFile)}
                 disabled={isAnalyzing}
@@ -45,18 +44,7 @@ export default function Index() {
               </Button>
 
               {result && (
-                <Button
-                  variant="secondary"
-                  onClick={() => analyzeImage(selectedFile)}
-                >
-                  <RefreshCw className="w-4 h-4 mr-2" />
-                  Re‑analyze
-                </Button>
-              )}
-
-              {result && (
                 <Button variant="outline" onClick={reset}>
-                  <ArrowLeft className="w-4 h-4 mr-2" />
                   Analyze Another
                 </Button>
               )}
