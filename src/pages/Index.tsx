@@ -51,7 +51,11 @@ export default function Index() {
             </div>
           )}
 
-          {result && <AnalysisResult result={result} />}
+          {result && (
+            <div className="mt-8">
+              <AnalysisResult result={result} />
+            </div>
+          )}
         </section>
 
         <EducationSection />
