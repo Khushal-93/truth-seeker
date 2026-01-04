@@ -16,5 +16,10 @@ export default function ProtectedRoute({ children }: Props) {
     return <Navigate to="/login" replace />;
   }
 
+  // If user exists but hasn't verified their email, route them to verification prompt
+  if (user && !user.emailVerified) {
+    return <Navigate to="/verify-email" replace />;
+  }
+
   return children;
 }

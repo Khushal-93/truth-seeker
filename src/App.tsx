@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Login from "@/firebase/pages/Login";
 import Register from "@/firebase/pages/Register";
+import Home from "./pages/Home";
+import VerifyEmail from "./pages/VerifyEmail";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 
@@ -22,17 +24,18 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-             <Route
-    path="/"
-    element={
-      <ProtectedRoute>
-        <Index />
-      </ProtectedRoute>
-    }
-  />
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/analyze"
+              element={
+                <ProtectedRoute>
+                  <Index />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/verify-email" element={<VerifyEmail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
