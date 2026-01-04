@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import Header from "@/components/Header";
+import TopBanner from "@/components/TopBanner";
 import HeroSection from "@/components/HeroSection";
 import ImageUploader from "@/components/ImageUploader";
 import AnalysisResult from "@/components/AnalysisResult";
@@ -19,6 +20,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background">
+      <TopBanner />
       <Header />
 
       <main>

@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth
 import { auth } from "@/firebase/firebase";
 import { useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import TopBanner from "@/components/TopBanner";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 
@@ -67,8 +68,10 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
-      <div className="max-w-md w-full px-6 py-8 rounded-2xl border border-border bg-card shadow-lg">
+    <div className="min-h-screen bg-background flex flex-col items-center">
+      <TopBanner />
+      <div className="flex-1 flex items-center justify-center w-full">
+        <div className="max-w-md w-full px-6 py-8 rounded-2xl border border-border bg-card shadow-lg">
         <div className="text-center mb-6">
           <h1 className="text-2xl md:text-3xl font-display font-bold text-foreground">Welcome Back</h1>
           <p className="text-sm text-muted-foreground">Sign in to analyze images and view your results.</p>

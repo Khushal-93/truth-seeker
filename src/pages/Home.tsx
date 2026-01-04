@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { Shield, Mail, HelpCircle, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import TopBanner from "@/components/TopBanner";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-background">
+      <TopBanner />
       <header className="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">

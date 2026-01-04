@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
+import TopBanner from "@/components/TopBanner";
 
 export default function VerifyEmail() {
   const { user, loading } = useAuth();
@@ -43,8 +44,10 @@ export default function VerifyEmail() {
   if (loading) return <div className="flex h-screen items-center justify-center">Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
-      <div className="max-w-md w-full px-6 py-8 rounded-2xl border border-border bg-card shadow-lg text-center">
+    <div className="min-h-screen bg-background flex flex-col items-center">
+      <TopBanner />
+      <div className="flex-1 flex items-center justify-center w-full">
+        <div className="max-w-md w-full px-6 py-8 rounded-2xl border border-border bg-card shadow-lg text-center">
         <h2 className="text-xl font-semibold mb-2">Verify Your Email</h2>
         <p className="text-sm text-muted-foreground mb-4">
           We sent a verification link to <strong>{user?.email}</strong>. Please click the link in your email to
