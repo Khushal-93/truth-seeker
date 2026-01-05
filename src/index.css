@@ -5,94 +5,103 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 210 20% 98%; /* soft off-white #f8fafc */
-    --foreground: 222 47% 11%; /* dark neutral #0f172a */
-
-    --card: 0 0% 100%; /* white */
+  :root,
+  [data-theme="light"],
+  .light {
+    /* Light Theme Colors - Exact Palette (HSL format for Tailwind) */
+    --background: 210 20% 98%; /* #F9FAFB */
+    --foreground: 222 47% 11%; /* #0F172A - Primary text */
+    
+    --card: 0 0% 100%; /* #FFFFFF - Primary surface */
     --card-foreground: 222 47% 11%;
-
+    
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-
-    --primary: 239 84% 67%; /* indigo #6366f1 */
+    
+    --primary: 239 84% 67%; /* #6366F1 - Accent/Brand */
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 210 20% 96%;
+    
+    --secondary: 210 40% 96%; /* #F1F5F9 - Secondary surface */
     --secondary-foreground: 222 47% 11%;
-
-    --muted: 215 16% 47%; /* muted gray #475569 */
+    
+    --muted: 215 16% 47%; /* #475569 - Secondary text */
     --muted-foreground: 215 16% 47%;
-
-    --accent: 239 84% 95%; /* light indigo */
-    --accent-foreground: 239 84% 67%;
-
+    
+    --accent: 239 84% 67%; /* #6366F1 */
+    --accent-foreground: 0 0% 100%;
+    
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-
-    --success: 142 76% 36%; /* green for authentic */
+    
+    --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
-
-    --warning: 38 92% 50%; /* orange for suspicious */
-    --warning-foreground: 0 0% 100%;
-
-    --border: 214 32% 91%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+    
+    --border: 214 32% 91%; /* #E2E8F0 */
     --input: 0 0% 100%;
     --ring: 239 84% 67%;
-
-    --radius: 1rem;
-
-    /* Modern gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(239 84% 67%) 0%, hsl(258 90% 66%) 100%); /* indigo to violet */
-    --gradient-glow: radial-gradient(ellipse at 20% 10%, hsl(239 84% 97% / 0.8) 0%, transparent 50%), radial-gradient(ellipse at 80% 60%, hsl(239 84% 95% / 0.4) 0%, transparent 40%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100% / 1) 0%, hsl(210 20% 99% / 1) 100%);
     
-    /* Premium shadows */
-    --shadow-glow: 0 20px 60px hsl(239 84% 67% / 0.12);
-    --shadow-card: 0 4px 24px hsl(222 47% 11% / 0.08);
-
-    --sidebar-background: 210 16% 98%;
-    --sidebar-foreground: 220 8% 12%;
-    --sidebar-primary: 220 8% 8%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 16% 96%;
-    --sidebar-accent-foreground: 220 8% 12%;
-    --sidebar-border: 210 16% 92%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 1rem;
+    
+    /* Light Theme Gradients */
+    --gradient-primary: linear-gradient(90deg, #6366F1 0%, #818CF8 100%);
+    --gradient-glow: radial-gradient(ellipse at 20% 10%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+    --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(249, 250, 251, 1) 100%);
+    
+    /* Light Theme Shadows */
+    --shadow-glow: 0 20px 60px rgba(99, 102, 241, 0.12);
+    --shadow-card: 0 4px 24px rgba(15, 23, 42, 0.08);
   }
 
+  [data-theme="dark"],
   .dark {
-    --background: 220 20% 4%;
-    --foreground: 180 100% 98%;
-
-    --card: 220 20% 8%;
-    --card-foreground: 180 100% 98%;
-
-    --popover: 220 20% 8%;
-    --popover-foreground: 180 100% 98%;
-
-    --primary: 175 80% 50%;
-    --primary-foreground: 220 20% 4%;
-
-    --secondary: 220 20% 14%;
-    --secondary-foreground: 180 100% 98%;
-
-    --muted: 220 20% 18%;
-    --muted-foreground: 220 10% 60%;
-
-    --accent: 280 70% 60%;
-    --accent-foreground: 180 100% 98%;
-
-    --border: 220 20% 18%;
-    --input: 220 20% 14%;
-    --ring: 175 80% 50%;
-
-    --gradient-primary: linear-gradient(135deg, hsl(175 80% 50%) 0%, hsl(200 80% 50%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(175 80% 50% / 0.15) 0%, transparent 70%);
-    --gradient-card: linear-gradient(180deg, hsl(220 20% 10%) 0%, hsl(220 20% 6%) 100%);
-
-    --shadow-glow: 0 0 60px hsl(175 80% 50% / 0.3);
-    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.4);
+    /* Dark Theme Colors - Exact Palette (HSL format for Tailwind) */
+    --background: 222 47% 4%; /* #020617 */
+    --foreground: 210 40% 98%; /* #F8FAFC - Primary text */
+    
+    --card: 222 47% 4%; /* #020617 - Card surface */
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 4%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 239 84% 80%; /* #818CF8 - Accent/Brand */
+    --primary-foreground: 222 47% 4%;
+    
+    --secondary: 222 47% 4%; /* #020617 - Secondary surface */
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 215 20% 65%; /* #CBD5E1 - Secondary text */
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 239 84% 80%; /* #818CF8 */
+    --accent-foreground: 222 47% 4%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 4%;
+    
+    --border: 222 47% 4%; /* #020617 */
+    --input: 222 47% 4%;
+    --ring: 239 84% 80%;
+    
+    --radius: 1rem;
+    
+    /* Dark Theme Gradients */
+    --gradient-primary: linear-gradient(90deg, #818CF8 0%, #6366F1 100%);
+    --gradient-glow: radial-gradient(ellipse at center, rgba(129, 140, 248, 0.15) 0%, transparent 70%);
+    --gradient-card: linear-gradient(180deg, rgba(2, 6, 23, 1) 0%, rgba(2, 6, 23, 0.95) 100%);
+    
+    /* Dark Theme Shadows */
+    --shadow-glow: 0 20px 60px rgba(129, 140, 248, 0.2);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -111,11 +120,19 @@
     background-position: center top;
     background-attachment: fixed;
     background-size: cover;
+    
+    /* Smooth theme transitions */
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Smooth transitions for common interactive elements */
   a, button, input, textarea, select, summary {
-    transition: all 200ms ease-in-out;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Theme-aware transitions for all elements */
+  * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
