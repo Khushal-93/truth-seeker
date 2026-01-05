@@ -15,7 +15,7 @@ export default function ImageUploader({
 
   const handleFile = useCallback(
     (file: File) => {
-      if (!file.type.startsWith("image/")) return;
+      if (!file.type.startsWith("image/") && !file.type.startsWith("video/")) return;
 
       const reader = new FileReader();
       reader.onload = (e) => setPreview(e.target?.result as string);
@@ -33,7 +33,7 @@ export default function ImageUploader({
           <label className="flex flex-col items-center justify-center h-80 border-2 border-dashed border-primary/30 rounded-xl cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 ease-in-out group">
             <input
               type="file"
-              accept="image/*"
+              accept="image/*,video/*"
               hidden
               disabled={isAnalyzing}
               onChange={(e) => e.target.files && handleFile(e.target.files[0])}
@@ -48,15 +48,19 @@ export default function ImageUploader({
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-200 ease-in-out">
                   <Upload className="w-8 h-8 text-primary" />
                 </div>
-                <p className="text-foreground font-medium text-lg mb-2">Click or drop an image</p>
-                <p className="text-muted-foreground text-sm">PNG, JPG, GIF up to 10MB</p>
+                <p className="text-foreground font-medium text-lg mb-2">Click or drop a file</p>
+                <p className="text-muted-foreground text-sm">Images or Videos up to 10MB</p>
               </>
             )}
           </label>
         </div>
       ) : (
         <div className="relative bg-white rounded-2xl border border-border shadow-xl p-4 hover:shadow-2xl transition-all duration-200 ease-in-out">
-          <img src={preview} alt="Preview" className="rounded-xl w-full h-auto max-h-96 object-contain" />
+          {preview.startsWith("data:video") ? (
+            <video src={preview} controls className="rounded-xl w-full h-auto max-h-96 object-contain" />
+          ) : (
+            <img src={preview} alt="Preview" className="rounded-xl w-full h-auto max-h-96 object-contain" />
+          )}
           <Button
             size="icon"
             variant="destructive"

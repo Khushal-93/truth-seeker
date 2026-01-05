@@ -14,30 +14,39 @@ const AnalysisResult = ({ result }: AnalysisResultProps) => {
   if (!result) return null;
 
   const { isDeepfake, confidence, reasons, tips } = result;
-  
+
   const getStatusColor = () => {
-    if (isDeepfake && confidence > 70) return "destructive";
-    if (isDeepfake && confidence > 40) return "warning";
-    return "success";
+    if (isDeepfake) {
+      if (confidence > 80) return "destructive";
+      return "warning";
+    }
+    // If real
+    if (confidence > 80) return "success";
+    return "success"; // Or maybe a neutral blue? Stick to success for now.
   };
 
   const getStatusIcon = () => {
-    const status = getStatusColor();
-    if (status === "destructive") return <XCircle className="w-8 h-8 text-destructive" />;
-    if (status === "warning") return <AlertTriangle className="w-8 h-8 text-warning" />;
+    if (isDeepfake) {
+      if (confidence > 80) return <XCircle className="w-8 h-8 text-destructive" />;
+      return <AlertTriangle className="w-8 h-8 text-warning" />;
+    }
     return <CheckCircle className="w-8 h-8 text-success" />;
   };
 
   const getStatusText = () => {
-    if (isDeepfake && confidence > 70) return "Likely Manipulated";
-    if (isDeepfake && confidence > 40) return "Possibly Manipulated";
+    if (isDeepfake) {
+      if (confidence > 80) return "Deepfake Detected";
+      return "Potential Manipulation";
+    }
+    if (confidence > 80) return "Authentic Media";
     return "Likely Authentic";
   };
 
   const getProgressColor = () => {
-    const status = getStatusColor();
-    if (status === "destructive") return "bg-destructive";
-    if (status === "warning") return "bg-warning";
+    if (isDeepfake) {
+      if (confidence > 80) return "bg-destructive";
+      return "bg-warning";
+    }
     return "bg-success";
   };
 
@@ -46,11 +55,10 @@ const AnalysisResult = ({ result }: AnalysisResultProps) => {
       {/* Main result card */}
       <div className="p-8 rounded-2xl bg-white border border-border shadow-xl hover:shadow-2xl transition-all duration-200 ease-in-out">
         <div className="flex items-center gap-5 mb-8">
-          <div className={`w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg ${
-            isDeepfake && confidence > 70 ? "bg-destructive/10 border border-destructive/20" : 
-            isDeepfake && confidence > 40 ? "bg-warning/10 border border-warning/20" : 
-            "bg-success/10 border border-success/20"
-          }`}>
+          <div className={`w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg ${isDeepfake ?
+              (confidence > 80 ? "bg-destructive/10 border border-destructive/20" : "bg-warning/10 border border-warning/20") :
+              "bg-success/10 border border-success/20"
+            }`}>
             {getStatusIcon()}
           </div>
           <div>
@@ -67,22 +75,23 @@ const AnalysisResult = ({ result }: AnalysisResultProps) => {
         <div className="mb-8">
           <div className="flex justify-between items-center mb-3">
             <span className="text-sm font-semibold text-foreground uppercase tracking-wide">Confidence Score</span>
-            <span className={`text-3xl font-bold ${
-              isDeepfake && confidence > 70 ? "text-destructive" : 
-              isDeepfake && confidence > 40 ? "text-warning" : 
-              "text-success"
-            }`}>{confidence}%</span>
+            <span className={`text-3xl font-bold ${isDeepfake ?
+                (confidence > 80 ? "text-destructive" : "text-warning") :
+                "text-success"
+              }`}>{confidence}%</span>
           </div>
           <div className="h-4 rounded-full bg-secondary overflow-hidden shadow-inner">
-            <div 
+            <div
               className={`h-full rounded-full transition-all duration-1000 ease-out ${getProgressColor()}`}
               style={{ width: `${confidence}%` }}
             />
           </div>
           <p className="text-sm text-muted-foreground mt-3 font-medium">
-            {confidence > 70 ? "High confidence in analysis" : 
-             confidence > 40 ? "Moderate confidence - review carefully" : 
-             "Low indicators of manipulation"}
+            {isDeepfake ? (
+              confidence > 80 ? "High probability of AI manipulation detected." : "Some anomalies detected, but not conclusive."
+            ) : (
+              confidence > 80 ? "Media appears highly consistent and authentic." : "No significant manipulation detected."
+            )}
           </p>
         </div>
 
@@ -94,7 +103,7 @@ const AnalysisResult = ({ result }: AnalysisResultProps) => {
           </h4>
           <ul className="space-y-3">
             {reasons.map((reason, index) => (
-              <li 
+              <li
                 key={index}
                 className="flex items-start gap-4 text-sm text-foreground p-4 rounded-xl bg-secondary/30 border border-border/50 hover:bg-secondary/50 hover:border-primary/30 transition-all duration-200 ease-in-out"
               >
@@ -116,7 +125,7 @@ const AnalysisResult = ({ result }: AnalysisResultProps) => {
         </h4>
         <ul className="space-y-4">
           {tips.map((tip, index) => (
-            <li 
+            <li
               key={index}
               className="flex items-start gap-3 text-sm text-foreground font-medium"
             >

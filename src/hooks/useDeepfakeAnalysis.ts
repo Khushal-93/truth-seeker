@@ -16,48 +16,52 @@ export const useDeepfakeAnalysis = () => {
 
   const analyzeImage = async (file: File) => {
     setIsAnalyzing(true);
+    setResult(null);
 
-    const imageHash = await hashImage(file);
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
 
-    // ✅ Return cached result (same image = same result)
-    if (analysisCache.has(imageHash)) {
-      setResult(analysisCache.get(imageHash)!);
+      const response = await fetch("http://localhost:8000/api/analyze", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.detail || "Analysis failed");
+      }
+
+      const data = await response.json();
+
+      // Transform API result to UI format
+      const analysisResult: AnalysisResult = {
+        isDeepfake: data.is_deepfake,
+        confidence: Math.round(data.confidence),
+        reasons: data.explanation || ["Analysis completed successfully"],
+        tips: [
+          "Verify from multiple trusted sources",
+          "Be cautious before sharing",
+          "Check for original context",
+        ],
+      };
+
+      setResult(analysisResult);
+    } catch (error) {
+      console.error("Analysis Error:", error);
+      // Fallback or Error State? For now, we show a basic error reason if possible in UI, 
+      // but the UI expects a Result object.
+      // Let's create an error result
+      const errorResult: AnalysisResult = {
+        isDeepfake: false,
+        confidence: 0,
+        reasons: ["Error connecting to AI server. Make sure server.py is running."],
+        tips: ["Check console logs", "Ensure backend is running on port 8000"],
+      };
+      setResult(errorResult);
+    } finally {
       setIsAnalyzing(false);
-      return;
     }
-
-    // Simulate processing delay
-    await new Promise((r) => setTimeout(r, 1200));
-
-    // ✅ REAL deterministic score
-    const score = hashToScore(imageHash);
-
-    const isDeepfake = score >= 50;
-
-    const analysisResult: AnalysisResult = {
-      isDeepfake,
-      confidence: isDeepfake ? 60 + (score % 40) : 10 + (score % 40),
-      reasons: isDeepfake
-        ? [
-            "Inconsistent facial texture detected",
-            "Unnatural blending near facial edges",
-            "Compression artifacts observed",
-          ]
-        : [
-            "Natural lighting consistency",
-            "No facial warping detected",
-            "Authentic texture patterns",
-          ],
-      tips: [
-        "Verify from multiple trusted sources",
-        "Be cautious before sharing",
-        "Check for original context",
-      ],
-    };
-
-    analysisCache.set(imageHash, analysisResult);
-    setResult(analysisResult);
-    setIsAnalyzing(false);
   };
 
   const reset = () => setResult(null);

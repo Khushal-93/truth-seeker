@@ -43,12 +43,12 @@ export default function Index() {
                 disabled={isAnalyzing}
                 className="h-12 px-8 text-base font-semibold hover:scale-105 transition-all duration-200 ease-in-out"
               >
-                {isAnalyzing ? "Analyzing..." : "Analyze Image"}
+                {isAnalyzing ? "Analyzing..." : "Analyze Media"}
               </Button>
 
               {result && (
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   onClick={reset}
                   className="h-12 px-8 text-base font-semibold hover:scale-105 transition-all duration-200 ease-in-out"
                 >
