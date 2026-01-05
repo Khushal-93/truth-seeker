@@ -12,6 +12,8 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
       <div className="absolute inset-0 bg-glow opacity-50" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "1.5s" }} />
+      {/* Subtle scanline overlay for gentle glitchy sheen */}
+      <div aria-hidden className="absolute inset-0 pointer-events-none scanline opacity-20 mix-blend-overlay" />
       
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Floating icon */}
@@ -28,10 +30,10 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
         
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 animate-fade-in">
           <span className="text-foreground">Detect </span>
-          <span className="text-gradient">Deepfakes</span>
+          <span className="text-gradient glitch" data-text="Deepfakes">Deepfakes</span>
           <br />
           <span className="text-foreground">Protect </span>
-          <span className="text-gradient">Truth</span>
+          <span className="text-gradient glitch" data-text="Truth">Truth</span>
         </h1>
         
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
@@ -59,7 +61,7 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
           variant="hero" 
           size="xl" 
           onClick={onGetStarted}
-          className="animate-fade-in"
+          className="animate-fade-in glitch-cta smooth"
           style={{ animationDelay: "0.4s" }}
         >
           Analyze an Image
