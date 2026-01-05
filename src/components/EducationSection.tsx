@@ -29,13 +29,13 @@ const educationCards = [
 
 const EducationSection = () => {
   return (
-    <section className="py-20 px-4">
+    <section className="py-24 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-            Become a <span className="text-gradient">Deepfake Detective</span>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+            Become a <span className="bg-gradient-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent">Deepfake Detective</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
             Learn the signs that experts look for when spotting fake images and videos.
             With practice, you can protect yourself and others!
           </p>
@@ -45,13 +45,23 @@ const EducationSection = () => {
           {educationCards.map((card, index) => (
             <div
               key={index}
-              className="p-6 rounded-2xl card-gradient border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 group"
+              className="p-8 rounded-2xl bg-white border border-border shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-200 ease-in-out hover:-translate-y-1 group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`w-12 h-12 rounded-xl mb-4 flex items-center justify-center bg-${card.color}/10 group-hover:scale-110 transition-transform`}>
-                <card.icon className={`w-6 h-6 text-${card.color}`} />
+              <div className={`w-14 h-14 rounded-xl mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-200 ease-in-out ${
+                card.color === 'primary' ? 'bg-primary/10' :
+                card.color === 'accent' ? 'bg-accent/10' :
+                card.color === 'warning' ? 'bg-warning/10' :
+                'bg-success/10'
+              }`}>
+                <card.icon className={`w-7 h-7 ${
+                  card.color === 'primary' ? 'text-primary' :
+                  card.color === 'accent' ? 'text-accent-foreground' :
+                  card.color === 'warning' ? 'text-warning' :
+                  'text-success'
+                }`} />
               </div>
-              <h3 className="text-lg font-display font-semibold text-foreground mb-2">
+              <h3 className="text-xl font-display font-semibold text-foreground mb-3">
                 {card.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">

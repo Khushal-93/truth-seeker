@@ -74,27 +74,27 @@ export default function Register() {
     <div className="min-h-screen bg-background flex flex-col items-center">
       <TopBanner />
 
-      <div className="flex-1 flex items-center justify-center w-full">
-        <div className="max-w-md w-full px-6 py-8 rounded-2xl border border-border bg-card shadow-lg">
-          <div className="text-center mb-6">
-            <h1 className="text-2xl md:text-3xl font-display font-bold text-foreground">
+      <div className="flex-1 flex items-center justify-center w-full px-4 py-12">
+        <div className="max-w-md w-full px-8 py-10 rounded-2xl border border-border bg-white shadow-xl hover:shadow-2xl transition-all duration-200 ease-in-out">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2">
               Create Account
             </h1>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground font-medium">
               Sign up to start analyzing images.
             </p>
           </div>
 
           <form
-            className="space-y-4"
+            className="space-y-5"
             onSubmit={handleRegister}
           >
             <label className="block">
-              <span className="text-sm text-muted-foreground">
+              <span className="text-sm font-semibold text-foreground mb-2 block">
                 Email
               </span>
               <input
-                className="mt-1 block w-full rounded-md border border-border bg-transparent px-3 py-2 focus:outline-none focus:border-primary"
+                className="mt-1 block w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 ease-in-out"
                 type="email"
                 placeholder="you@example.com"
                 value={email}
@@ -103,11 +103,11 @@ export default function Register() {
             </label>
 
             <label className="block">
-              <span className="text-sm text-muted-foreground">
+              <span className="text-sm font-semibold text-foreground mb-2 block">
                 Password
               </span>
               <input
-                className="mt-1 block w-full rounded-md border border-border bg-transparent px-3 py-2 focus:outline-none focus:border-primary"
+                className="mt-1 block w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 ease-in-out"
                 type="password"
                 placeholder="Create a password"
                 value={password}
@@ -117,18 +117,18 @@ export default function Register() {
 
             <Button
               type="submit"
-              className="w-full"
+              className="w-full mt-6 h-12 text-base font-semibold hover:scale-[1.02] transition-all duration-200 ease-in-out"
               disabled={submitting}
             >
               {submitting ? "Creating account..." : "Register"}
             </Button>
           </form>
 
-          <div className="mt-4 text-center text-sm text-muted-foreground">
+          <div className="mt-6 text-center text-sm text-muted-foreground">
             Already have an account?{" "}
             <Link
               to="/login"
-              className="text-primary hover:underline"
+              className="text-primary font-semibold hover:underline transition-all duration-200 ease-in-out"
             >
               Login
             </Link>

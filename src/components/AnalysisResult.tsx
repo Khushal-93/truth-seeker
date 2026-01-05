@@ -42,38 +42,44 @@ const AnalysisResult = ({ result }: AnalysisResultProps) => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto space-y-6 animate-fade-in">
+    <div className="w-full max-w-3xl mx-auto space-y-6 animate-fade-in">
       {/* Main result card */}
-      <div className="p-6 rounded-2xl card-gradient border border-border">
-        <div className="flex items-center gap-4 mb-6">
-          <div className={`w-16 h-16 rounded-xl flex items-center justify-center ${
-            isDeepfake ? "bg-destructive/10" : "bg-success/10"
+      <div className="p-8 rounded-2xl bg-white border border-border shadow-xl hover:shadow-2xl transition-all duration-200 ease-in-out">
+        <div className="flex items-center gap-5 mb-8">
+          <div className={`w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg ${
+            isDeepfake && confidence > 70 ? "bg-destructive/10 border border-destructive/20" : 
+            isDeepfake && confidence > 40 ? "bg-warning/10 border border-warning/20" : 
+            "bg-success/10 border border-success/20"
           }`}>
             {getStatusIcon()}
           </div>
           <div>
-            <h3 className="text-2xl font-display font-bold text-foreground">
+            <h3 className="text-3xl font-display font-bold text-foreground mb-1">
               {getStatusText()}
             </h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground font-medium">
               Analysis complete
             </p>
           </div>
         </div>
 
         {/* Confidence meter */}
-        <div className="mb-6">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-sm text-muted-foreground">Confidence Score</span>
-            <span className="text-lg font-bold text-foreground">{confidence}%</span>
+        <div className="mb-8">
+          <div className="flex justify-between items-center mb-3">
+            <span className="text-sm font-semibold text-foreground uppercase tracking-wide">Confidence Score</span>
+            <span className={`text-3xl font-bold ${
+              isDeepfake && confidence > 70 ? "text-destructive" : 
+              isDeepfake && confidence > 40 ? "text-warning" : 
+              "text-success"
+            }`}>{confidence}%</span>
           </div>
-          <div className="h-3 rounded-full bg-secondary overflow-hidden">
+          <div className="h-4 rounded-full bg-secondary overflow-hidden shadow-inner">
             <div 
               className={`h-full rounded-full transition-all duration-1000 ease-out ${getProgressColor()}`}
               style={{ width: `${confidence}%` }}
             />
           </div>
-          <p className="text-xs text-muted-foreground mt-2">
+          <p className="text-sm text-muted-foreground mt-3 font-medium">
             {confidence > 70 ? "High confidence in analysis" : 
              confidence > 40 ? "Moderate confidence - review carefully" : 
              "Low indicators of manipulation"}
@@ -81,21 +87,21 @@ const AnalysisResult = ({ result }: AnalysisResultProps) => {
         </div>
 
         {/* Detection reasons */}
-        <div className="space-y-3">
-          <h4 className="text-sm font-semibold text-foreground flex items-center gap-2">
-            <Info className="w-4 h-4 text-primary" />
+        <div className="space-y-4">
+          <h4 className="text-base font-semibold text-foreground flex items-center gap-2 mb-4">
+            <Info className="w-5 h-5 text-primary" />
             Analysis Details
           </h4>
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {reasons.map((reason, index) => (
               <li 
                 key={index}
-                className="flex items-start gap-3 text-sm text-muted-foreground p-3 rounded-lg bg-secondary/50"
+                className="flex items-start gap-4 text-sm text-foreground p-4 rounded-xl bg-secondary/30 border border-border/50 hover:bg-secondary/50 hover:border-primary/30 transition-all duration-200 ease-in-out"
               >
-                <span className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center text-xs text-primary font-bold flex-shrink-0 mt-0.5">
+                <span className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center text-xs text-primary font-bold flex-shrink-0 mt-0.5 border border-primary/30">
                   {index + 1}
                 </span>
-                {reason}
+                <span className="pt-0.5">{reason}</span>
               </li>
             ))}
           </ul>
@@ -103,19 +109,19 @@ const AnalysisResult = ({ result }: AnalysisResultProps) => {
       </div>
 
       {/* Tips card */}
-      <div className="p-6 rounded-2xl border border-primary/30 bg-primary/5">
-        <h4 className="text-lg font-display font-semibold text-foreground mb-4 flex items-center gap-2">
-          <Shield className="w-5 h-5 text-primary" />
+      <div className="p-8 rounded-2xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 shadow-xl hover:shadow-2xl transition-all duration-200 ease-in-out">
+        <h4 className="text-xl font-display font-semibold text-foreground mb-5 flex items-center gap-3">
+          <Shield className="w-6 h-6 text-primary" />
           How to Stay Safe
         </h4>
-        <ul className="space-y-3">
+        <ul className="space-y-4">
           {tips.map((tip, index) => (
             <li 
               key={index}
-              className="flex items-start gap-3 text-sm text-muted-foreground"
+              className="flex items-start gap-3 text-sm text-foreground font-medium"
             >
-              <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-              {tip}
+              <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>{tip}</span>
             </li>
           ))}
         </ul>

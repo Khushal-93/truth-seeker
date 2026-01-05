@@ -27,7 +27,7 @@ export default function Index() {
         <HeroSection onGetStarted={scrollToAnalyzer} />
 
         {/* Analyzer */}
-        <section ref={analyzerRef} className="py-20 px-4">
+        <section ref={analyzerRef} className="py-24 px-4">
           <ImageUploader
             isAnalyzing={isAnalyzing}
             onImageSelect={(file) => {
@@ -37,16 +37,21 @@ export default function Index() {
           />
 
           {selectedFile && (
-            <div className="flex justify-center items-center gap-3 mt-6">
+            <div className="flex justify-center items-center gap-4 mt-8">
               <Button
                 onClick={() => analyzeImage(selectedFile)}
                 disabled={isAnalyzing}
+                className="h-12 px-8 text-base font-semibold hover:scale-105 transition-all duration-200 ease-in-out"
               >
                 {isAnalyzing ? "Analyzing..." : "Analyze Image"}
               </Button>
 
               {result && (
-                <Button variant="outline" onClick={reset}>
+                <Button 
+                  variant="outline" 
+                  onClick={reset}
+                  className="h-12 px-8 text-base font-semibold hover:scale-105 transition-all duration-200 ease-in-out"
+                >
                   Analyze Another
                 </Button>
               )}
@@ -54,7 +59,7 @@ export default function Index() {
           )}
 
           {result && (
-            <div className="mt-8">
+            <div className="mt-12">
               <AnalysisResult result={result} />
             </div>
           )}
