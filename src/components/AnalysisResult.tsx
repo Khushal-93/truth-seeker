@@ -53,11 +53,11 @@ const AnalysisResult = ({ result }: AnalysisResultProps) => {
   return (
     <div className="w-full max-w-3xl mx-auto space-y-6 animate-fade-in">
       {/* Main result card */}
-      <div className="p-8 rounded-2xl bg-white border border-border shadow-xl hover:shadow-2xl transition-all duration-200 ease-in-out">
+      <div className="p-8 rounded-2xl bg-card border border-border shadow-xl hover:shadow-2xl transition-all duration-200 ease-in-out">
         <div className="flex items-center gap-5 mb-8">
           <div className={`w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg ${isDeepfake ?
-              (confidence > 80 ? "bg-destructive/10 border border-destructive/20" : "bg-warning/10 border border-warning/20") :
-              "bg-success/10 border border-success/20"
+            (confidence > 80 ? "bg-destructive/10 border border-destructive/20" : "bg-warning/10 border border-warning/20") :
+            "bg-success/10 border border-success/20"
             }`}>
             {getStatusIcon()}
           </div>
@@ -76,8 +76,8 @@ const AnalysisResult = ({ result }: AnalysisResultProps) => {
           <div className="flex justify-between items-center mb-3">
             <span className="text-sm font-semibold text-foreground uppercase tracking-wide">Confidence Score</span>
             <span className={`text-3xl font-bold ${isDeepfake ?
-                (confidence > 80 ? "text-destructive" : "text-warning") :
-                "text-success"
+              (confidence > 80 ? "text-destructive" : "text-warning") :
+              "text-success"
               }`}>{confidence}%</span>
           </div>
           <div className="h-4 rounded-full bg-secondary overflow-hidden shadow-inner">

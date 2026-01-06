@@ -8,6 +8,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import TopBanner from "@/components/TopBanner";
 import { useToast } from "@/hooks/use-toast";
+import { useTheme } from "@/hooks/useTheme";
+import { Moon, Sun } from "lucide-react";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -16,6 +18,7 @@ export default function Register() {
 
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { theme, toggleTheme } = useTheme();
 
   const handleRegister = async (e?: React.FormEvent) => {
     e?.preventDefault();
@@ -49,7 +52,7 @@ export default function Register() {
 
       try {
         await sendEmailVerification(cred.user);
-      } catch {}
+      } catch { }
 
       toast({
         title: "Verify your email",
@@ -74,8 +77,22 @@ export default function Register() {
     <div className="min-h-screen bg-background flex flex-col items-center">
       <TopBanner />
 
+      <div className="absolute top-4 right-4 z-50">
+        <button
+          onClick={toggleTheme}
+          className="p-3 rounded-full bg-card border border-border hover:bg-secondary transition-all duration-300 ease-out shadow-lg"
+          aria-label="Toggle theme"
+        >
+          {theme === "light" ? (
+            <Moon className="w-5 h-5 text-muted-foreground hover:text-foreground" />
+          ) : (
+            <Sun className="w-5 h-5 text-muted-foreground hover:text-foreground" />
+          )}
+        </button>
+      </div>
+
       <div className="flex-1 flex items-center justify-center w-full px-4 py-12">
-        <div className="max-w-md w-full px-8 py-10 rounded-2xl border border-border bg-white shadow-xl hover:shadow-2xl transition-all duration-200 ease-in-out">
+        <div className="max-w-md w-full px-8 py-10 rounded-2xl border border-border bg-card shadow-xl hover:shadow-2xl transition-all duration-200 ease-in-out">
           <div className="text-center mb-8">
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2">
               Create Account

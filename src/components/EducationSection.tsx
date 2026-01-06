@@ -45,21 +45,19 @@ const EducationSection = () => {
           {educationCards.map((card, index) => (
             <div
               key={index}
-              className="p-8 rounded-2xl bg-white border border-border shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-200 ease-in-out hover:-translate-y-1 group"
+              className="p-8 rounded-2xl bg-card border border-border shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-200 ease-in-out hover:-translate-y-1 group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`w-14 h-14 rounded-xl mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-200 ease-in-out ${
-                card.color === 'primary' ? 'bg-primary/10' :
-                card.color === 'accent' ? 'bg-accent/10' :
-                card.color === 'warning' ? 'bg-warning/10' :
-                'bg-success/10'
-              }`}>
-                <card.icon className={`w-7 h-7 ${
-                  card.color === 'primary' ? 'text-primary' :
-                  card.color === 'accent' ? 'text-accent-foreground' :
-                  card.color === 'warning' ? 'text-warning' :
-                  'text-success'
-                }`} />
+              <div className={`w-14 h-14 rounded-xl mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-200 ease-in-out ${card.color === 'primary' ? 'bg-primary/10' :
+                  card.color === 'accent' ? 'bg-accent/10' :
+                    card.color === 'warning' ? 'bg-warning/10' :
+                      'bg-success/10'
+                }`}>
+                <card.icon className={`w-7 h-7 ${card.color === 'primary' ? 'text-primary' :
+                    card.color === 'accent' ? 'text-accent-foreground' :
+                      card.color === 'warning' ? 'text-warning' :
+                        'text-success'
+                  }`} />
               </div>
               <h3 className="text-xl font-display font-semibold text-foreground mb-3">
                 {card.title}
