@@ -29,7 +29,7 @@ export default function ImageUploader({
   return (
     <div className="w-full max-w-2xl mx-auto">
       {!preview ? (
-        <div className="bg-white rounded-2xl border border-border shadow-xl p-8 hover:shadow-2xl transition-all duration-200 ease-in-out">
+        <div className="bg-card rounded-2xl border border-border shadow-xl p-8 hover:shadow-2xl transition-all duration-200 ease-in-out">
           <label className="flex flex-col items-center justify-center h-80 border-2 border-dashed border-primary/30 rounded-xl cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 ease-in-out group">
             <input
               type="file"
@@ -55,7 +55,7 @@ export default function ImageUploader({
           </label>
         </div>
       ) : (
-        <div className="relative bg-white rounded-2xl border border-border shadow-xl p-4 hover:shadow-2xl transition-all duration-200 ease-in-out">
+        <div className="relative bg-card rounded-2xl border border-border shadow-xl p-4 hover:shadow-2xl transition-all duration-200 ease-in-out">
           {preview.startsWith("data:video") ? (
             <video src={preview} controls className="rounded-xl w-full h-auto max-h-96 object-contain" />
           ) : (

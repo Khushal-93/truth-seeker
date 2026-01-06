@@ -4,14 +4,17 @@ import { auth } from "@/firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
+import { useTheme } from "@/hooks/useTheme";
+import { Moon, Sun } from "lucide-react";
 
 const Header = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { theme, toggleTheme } = useTheme();
 
   const handleLogout = async () => {
-      try {
+    try {
       await signOut(auth);
       toast({ title: "Signed out", description: "You have been signed out.", variant: "default" });
       navigate("/login");
@@ -30,7 +33,7 @@ const Header = () => {
             DeepGuard
           </span>
         </div>
-        
+
         <nav className="hidden md:flex items-center gap-8">
           <a href="#detect" className="text-sm font-medium text-muted-foreground hover:text-primary transition-all duration-200 ease-in-out hover:scale-105">
             Detect
@@ -41,6 +44,17 @@ const Header = () => {
           <a href="#about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-all duration-200 ease-in-out hover:scale-105">
             About
           </a>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg hover:bg-secondary transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            aria-label="Toggle theme"
+          >
+            {theme === "light" ? (
+              <Moon className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+            ) : (
+              <Sun className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+            )}
+          </button>
           {user ? (
             <button
               onClick={handleLogout}

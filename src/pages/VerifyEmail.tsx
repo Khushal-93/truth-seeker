@@ -3,11 +3,14 @@ import { sendEmailVerification, signOut } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
 import { Button } from "@/components/ui/button";
 import TopBanner from "@/components/TopBanner";
+import { useTheme } from "@/hooks/useTheme";
+import { Moon, Sun } from "lucide-react";
 
 export default function VerifyEmail() {
   const user = auth.currentUser;
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const checkVerification = async () => {
@@ -49,8 +52,22 @@ export default function VerifyEmail() {
     <div className="min-h-screen bg-background flex flex-col items-center">
       <TopBanner />
 
+      <div className="absolute top-4 right-4 z-50">
+        <button
+          onClick={toggleTheme}
+          className="p-3 rounded-full bg-card border border-border hover:bg-secondary transition-all duration-300 ease-out shadow-lg"
+          aria-label="Toggle theme"
+        >
+          {theme === "light" ? (
+            <Moon className="w-5 h-5 text-muted-foreground hover:text-foreground" />
+          ) : (
+            <Sun className="w-5 h-5 text-muted-foreground hover:text-foreground" />
+          )}
+        </button>
+      </div>
+
       <div className="flex-1 flex items-center justify-center w-full px-4 py-12">
-        <div className="max-w-md w-full px-8 py-10 rounded-2xl border border-border bg-white shadow-xl hover:shadow-2xl transition-all duration-200 ease-in-out text-center">
+        <div className="max-w-md w-full px-8 py-10 rounded-2xl border border-border bg-card shadow-xl hover:shadow-2xl transition-all duration-200 ease-in-out text-center">
           <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">
             Verify Your Email
           </h2>
@@ -62,16 +79,16 @@ export default function VerifyEmail() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
-            <Button 
-              onClick={handleResend} 
+            <Button
+              onClick={handleResend}
               disabled={sending}
               className="h-11 font-semibold hover:scale-[1.02] transition-all duration-200 ease-in-out"
             >
               {sending ? "Sending..." : "Resend Email"}
             </Button>
 
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               onClick={handleSignOut}
               className="h-11 font-semibold hover:scale-[1.02] transition-all duration-200 ease-in-out"
             >
