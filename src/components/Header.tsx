@@ -18,8 +18,8 @@ const Header = () => {
       await signOut(auth);
       toast({ title: "Signed out", description: "You have been signed out.", variant: "default" });
       navigate("/login");
-    } catch (err: any) {
-      toast({ title: "Sign out failed", description: err?.message || "Could not sign out.", variant: "destructive" });
+    } catch (err) {
+      toast({ title: "Sign out failed", description: (err instanceof Error ? err.message : "Could not sign out."), variant: "destructive" });
     }
   };
   return (
@@ -41,8 +41,8 @@ const Header = () => {
           <a href="#learn" className="text-sm font-medium text-muted-foreground hover:text-primary transition-all duration-200 ease-in-out hover:scale-105">
             Learn
           </a>
-          <a href="#about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-all duration-200 ease-in-out hover:scale-105">
-            About
+          <a href="#support" className="text-sm font-medium text-muted-foreground hover:text-primary transition-all duration-200 ease-in-out hover:scale-105">
+            Support
           </a>
           <button
             onClick={toggleTheme}

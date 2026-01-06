@@ -21,8 +21,8 @@ const Home = () => {
           </div>
 
           <nav className="flex items-center gap-4">
-            <Link 
-              to="/login" 
+            <Link
+              to="/login"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 ease-out relative group"
             >
               Login
@@ -40,8 +40,8 @@ const Home = () => {
               )}
             </button>
             <Link to="/register">
-              <Button 
-                size="sm" 
+              <Button
+                size="sm"
                 className="bg-gradient-to-r from-primary to-primary/80 dark:from-primary dark:to-primary/90 text-primary-foreground border-0 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-105 transition-all duration-300 ease-out font-semibold"
               >
                 Sign Up
@@ -68,16 +68,16 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Link to="/analyze">
-                <Button 
-                  size="lg" 
+              <Link to="/analyze#detect">
+                <Button
+                  size="lg"
                   className="bg-gradient-to-r from-primary to-primary/80 dark:from-primary dark:to-primary/90 text-primary-foreground border-0 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:scale-105 transition-all duration-300 ease-out font-semibold text-base px-8 py-6 h-auto rounded-xl"
                 >
                   Analyze Image
                 </Button>
               </Link>
-              <a 
-                href="#how-it-works" 
+              <a
+                href="#how-it-works"
                 className="text-base font-medium text-muted-foreground hover:text-foreground transition-all duration-300 ease-out px-4 py-6"
               >
                 Learn More
@@ -88,10 +88,10 @@ const Home = () => {
           {/* Right Side - Floating Glass Card */}
           <div className="hidden md:flex items-center justify-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <div className="w-full max-w-lg rounded-2xl bg-card/80 dark:bg-card/90 backdrop-blur-sm border border-border p-8 shadow-xl shadow-primary/10 hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-1 transition-all duration-300 ease-out">
-              <img 
-                alt="hero" 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" 
-                className="w-full h-64 object-cover rounded-xl mb-6" 
+              <img
+                alt="hero"
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder"
+                className="w-full h-64 object-cover rounded-xl mb-6"
               />
               <div>
                 <h3 className="text-2xl font-display font-semibold text-foreground mb-3">How it works</h3>
@@ -209,7 +209,7 @@ const Home = () => {
               <p className="text-muted-foreground leading-relaxed">We inspect pixels, edges and lighting consistency to surface suspicious artifacts and provide a confidence score.</p>
             </div>
 
-            <div className="p-8 rounded-2xl border border-border bg-card shadow-lg hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 ease-out">
+            <div id="support" className="p-8 rounded-2xl border border-border bg-card shadow-lg hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 ease-out">
               <Mail className="w-10 h-10 text-primary mb-5" />
               <h4 className="text-xl font-display font-semibold text-foreground mb-3">Help & Support</h4>
               <p className="text-muted-foreground leading-relaxed">Questions? Reach us at <a href="mailto:support@deepguard.example" className="text-primary font-semibold hover:underline">support@deepguard.example</a></p>

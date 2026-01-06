@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import ImageUploader from "@/components/ImageUploader";
 import AnalysisResult from "@/components/AnalysisResult";
 import EducationSection from "@/components/EducationSection";
+import SupportSection from "@/components/SupportSection";
 import { useDeepfakeAnalysis } from "@/hooks/useDeepfakeAnalysis";
 import { Button } from "@/components/ui/button";
 
@@ -14,9 +15,16 @@ export default function Index() {
     useDeepfakeAnalysis();
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [resetKey, setResetKey] = useState(0);
 
   const scrollToAnalyzer = () =>
     analyzerRef.current?.scrollIntoView({ behavior: "smooth" });
+
+  const handleReset = () => {
+    reset();
+    setSelectedFile(null);
+    setResetKey((prev) => prev + 1);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -27,8 +35,9 @@ export default function Index() {
         <HeroSection onGetStarted={scrollToAnalyzer} />
 
         {/* Analyzer */}
-        <section ref={analyzerRef} className="py-24 px-4">
+        <section id="detect" ref={analyzerRef} className="py-24 px-4">
           <ImageUploader
+            key={resetKey}
             isAnalyzing={isAnalyzing}
             onImageSelect={(file) => {
               setSelectedFile(file);
@@ -41,7 +50,7 @@ export default function Index() {
               <Button
                 onClick={() => analyzeImage(selectedFile)}
                 disabled={isAnalyzing}
-                className="h-12 px-8 text-base font-semibold hover:scale-105 transition-all duration-200 ease-in-out"
+                className="h-12 px-8 text-base font-semibold bg-gradient-to-r from-primary to-indigo-600 hover:from-primary/90 hover:to-indigo-600/90 text-white shadow-lg shadow-primary/25 hover:scale-105 transition-all duration-200 ease-in-out"
               >
                 {isAnalyzing ? "Analyzing..." : "Analyze Media"}
               </Button>
@@ -49,7 +58,7 @@ export default function Index() {
               {result && (
                 <Button
                   variant="outline"
-                  onClick={reset}
+                  onClick={handleReset}
                   className="h-12 px-8 text-base font-semibold hover:scale-105 transition-all duration-200 ease-in-out"
                 >
                   Analyze Another
@@ -66,6 +75,7 @@ export default function Index() {
         </section>
 
         <EducationSection />
+        <SupportSection />
       </main>
     </div>
   );

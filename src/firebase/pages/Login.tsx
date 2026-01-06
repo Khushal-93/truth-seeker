@@ -78,7 +78,7 @@ export default function Login() {
       if (!signedInUser.emailVerified) {
         try {
           await sendEmailVerification(signedInUser);
-        } catch { }
+        } catch { /* ignore */ }
 
         toast({
           title: "Email not verified",
@@ -97,10 +97,10 @@ export default function Login() {
       });
 
       navigate("/analyze");
-    } catch (error: any) {
+    } catch (error) {
       toast({
         title: "Sign-in failed",
-        description: error?.message || "Unable to sign in.",
+        description: (error instanceof Error ? error.message : "Unable to sign in."),
         variant: "destructive",
       });
     } finally {

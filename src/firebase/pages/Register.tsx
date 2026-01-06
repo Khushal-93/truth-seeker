@@ -52,7 +52,7 @@ export default function Register() {
 
       try {
         await sendEmailVerification(cred.user);
-      } catch { }
+      } catch { /* ignore */ }
 
       toast({
         title: "Verify your email",
@@ -61,11 +61,11 @@ export default function Register() {
       });
 
       navigate("/verify-email");
-    } catch (error: any) {
+    } catch (error) {
       toast({
         title: "Registration failed",
         description:
-          error?.message || "Could not create account.",
+          (error instanceof Error ? error.message : "Could not create account."),
         variant: "destructive",
       });
     } finally {
