@@ -20,8 +20,11 @@
 </p>
 
 <p align="center">
-  <img src="./public/images/code.png" alt="Deepfake Detection" width="600"/>
+  <img src="https://raw.githubusercontent.com/Khushal-93/truth-seeker/main/public/code.png" 
+       alt="Deepfake Detection Illustration" 
+       width="600" />
 </p>
+
 
 
 # 🛡️ Truth Seeker (DeepGuard)
