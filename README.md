@@ -102,7 +102,8 @@ pip install -r requirements_server.txt
 Run the Project
 python server.py
 
-📂 Project Structure
+## 📂 Project Structure
+```bash
 truth-seeker/
 ├── public/
 ├── src/
