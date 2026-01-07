@@ -1,4 +1,11 @@
 
+<p align="center">
+  <img 
+    src="https://raw.githubusercontent.com/Khushal-93/truth-seeker/main/public/Deeepfake.png"
+    alt="Deepfake Detection Illustration"
+    width="900"
+  />
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Project-Truth%20Seeker-blueviolet?style=for-the-badge" />
