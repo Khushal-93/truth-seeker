@@ -15,7 +15,7 @@
 **Truth Seeker** is an AI-powered system designed to detect deepfake images and videos with high accuracy, helping prevent misinformation, fraud, and digital manipulation.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Khushal-93/truth-seeker/main/public/deepfake-example.png" 
+  <img src="https://raw.githubusercontent.com/Khushal-93/truth-seeker/public/ChatGPT Image Jan 7, 2026, 09_51_35 PM.png" 
        alt="Deepfake Detection Illustration" 
        width="600" />
 </p>
