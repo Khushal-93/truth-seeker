@@ -4,6 +4,11 @@
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Firebase-Authentication-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+  <img src="https://img.shields.io/badge/Google%20Fonts-Typography-4285F4?style=for-the-badge&logo=googlefonts&logoColor=white" />
+</p>
+
 # 🛡️ Truth Seeker (DeepGuard)
 
 **Truth Seeker (DeepGuard)** is an AI-powered system designed to detect deepfake images and videos with high accuracy.  
