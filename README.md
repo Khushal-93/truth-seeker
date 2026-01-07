@@ -129,6 +129,7 @@ truth-seeker/
 ```
 
 ## 📊 Project Status
+
 ✔ Image Deepfake Detection
 
 ✔ Video Deepfake Detection
@@ -136,13 +137,13 @@ truth-seeker/
 🔄 Model Accuracy Improvements (Ongoing)
 
 ## 👥 Team 
-** Khushal Choudhary – Frontend & UI **
 
-** Tushar kumar – ML & Model Integration **
-
-** Pushkar Shinde – Backend & APIs **
-
-** Ruchita Naik - PPT and coordination **
+ Name | Role |
+|-----|-----|
+| Khushal Choudhary | Frontend & UI |
+| Tushar kumar | AI Model & Integration |
+| Pushkar Shinde | Backend & APIs |
+| Ruchita Naik | PPT and coordination |
 
 ## 📜 License
 This project is licensed under the MIT License.
