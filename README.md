@@ -2,8 +2,8 @@
   <img src="https://img.shields.io/badge/Project-Truth%20Seeker-blueviolet?style=for-the-badge" />
   <img src="https://img.shields.io/badge/AI-Deepfake%20Detection-red?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
-  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 </p>
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/Firebase-Authentication-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
