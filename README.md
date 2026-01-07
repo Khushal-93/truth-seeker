@@ -77,8 +77,9 @@ python main.py
 ## 👥 Team
 
 - **Khushal Choudhary** – Frontend & UI  
-- **Arhant Bhalerao** – ML & Model Integration  
-- **Sujal Kamate** – Backend & APIs  
+- **Tushar kumar** – ML & Model Integration  
+- **Pushkar Shinde** – Backend & APIs  
+- **Ruchita Naik** - PPT making and coordination
 
 
 
