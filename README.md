@@ -9,6 +9,16 @@
   <img src="https://img.shields.io/badge/Google%20Fonts-Typography-4285F4?style=for-the-badge&logo=googlefonts&logoColor=white" />
 </p>
 
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=32&pause=1000&color=7C3AED&center=true&vCenter=true&width=800&lines=Truth+Seeker+%28DeepGuard%29;AI-Powered+Deepfake+Detection;Detecting+Fake+Images+%26+Videos;Protecting+Digital+Trust" alt="Typing SVG" />
+</p>
+
+<p align="center">
+  <b>AI‑Powered System to Detect Deepfake Images & Videos</b><br/>
+  Preventing misinformation, fraud, and digital manipulation
+</p>
+
+
 # 🛡️ Truth Seeker (DeepGuard)
 
 **Truth Seeker (DeepGuard)** is an AI-powered system designed to detect deepfake images and videos with high accuracy.  
