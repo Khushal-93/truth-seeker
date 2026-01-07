@@ -50,7 +50,7 @@ flowchart TD
 ```
 ---
 
- Key Features
+ ## Key Features
 🔍 AI-based deepfake image & video detection
 
 ⚡ High-performance optimized models
@@ -61,7 +61,7 @@ flowchart TD
 
 📈 Scalable architecture for future upgrades
 
-🧰 Tech Stack
+## 🧰 Tech Stack
 Frontend
 HTML, CSS, JavaScript
 
@@ -88,7 +88,7 @@ Intel® OpenVINO™
 Deployment
 Vercel / Docker
 
-🚀 Getting Started
+## 🚀 Getting Started
 Prerequisites
 Python 3.9+
 
@@ -118,7 +118,7 @@ truth-seeker/
 
 🔄 Model Accuracy Improvements (Ongoing)
 
-👥 Team 
+## 👥 Team 
 Khushal Choudhary – Frontend & UI
 
 Tushar kumar – ML & Model Integration
