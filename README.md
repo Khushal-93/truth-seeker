@@ -61,6 +61,8 @@ flowchart TD
 
 📈 Scalable architecture for future upgrades
 
+---
+
 ## 🧰 Tech Stack
 
 ### 🌐 Frontend
@@ -98,6 +100,8 @@ flowchart TD
 ### 🚀 Deployment
 - **Vercel**
 - **Docker**
+
+---
 
 ## 🚀 Getting Started
 Prerequisites
