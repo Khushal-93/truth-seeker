@@ -18,7 +18,7 @@
   Preventing misinformation, fraud, and digital manipulation
 </p>
 
----
+# 🛡️ Truth Seeker (DeepGuard)
 
 **Truth Seeker (DeepGuard)** is an AI-powered system designed to detect deepfake images and videos with high accuracy.  
 It helps prevent misinformation, fraud, identity misuse, and digital manipulation across social media and online platforms.
