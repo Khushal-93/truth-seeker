@@ -23,7 +23,7 @@
 
 ## 🏗️ System Architecture
 
-```text
+``` text
 User Uploads Media
         │
         ▼
@@ -38,7 +38,8 @@ Confidence Scoring Engine
         ▼
 Final Prediction (Real / Fake)
 
-```md
+```
+
 ## 📈 Project Statistics
 
 <p align="center">
@@ -71,18 +72,15 @@ cd REPO_NAME
 pip install -r requirements.txt
 python main.py
 
+```
 
 
----
-
-## 👥 STEP 9: Team Section (Intel‑Style)
-
-```md
 ## 👥 Team
 
 - **Khushal Choudhary** – Frontend & UI  
 - **Arhant Bhalerao** – ML & Model Integration  
 - **Sujal Kamate** – Backend & APIs  
+
 
 
 ## 📄 License
