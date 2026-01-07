@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Khushal-93/truth-seeker/main/public/code.jpg" 
+  <img src="https://raw.githubusercontent.com/Khushal-93/truth-seeker/main/public/CC.jpg" 
        alt="Deepfake Detection Illustration" 
        width="600" />
 </p>
