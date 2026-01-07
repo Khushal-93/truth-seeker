@@ -62,31 +62,42 @@ flowchart TD
 📈 Scalable architecture for future upgrades
 
 ## 🧰 Tech Stack
-Frontend
-HTML, CSS, JavaScript
 
-React (if applicable)
+### 🌐 Frontend
+- **HTML, CSS, JavaScript**
+- **React** (UI Framework)
 
-Backend
-Python
+---
 
-FastAPI / Flask
+### ⚙️ Backend
+- **Python**
+- **FastAPI / Flask**
 
-AI / ML
-CNN / Transformer-based models
+---
 
-Authentication (Google)
-- Firebase Authentication (Email & Password)
+### 🤖 AI / Machine Learning
+- **CNN & Transformer‑based Models**
+- **OpenCV**
+- **PyTorch / TensorFlow**
 
-OpenCV
+---
 
-PyTorch / TensorFlow
+### 🔐 Authentication (Google)
+- **Firebase Authentication**
+  - Email & Password based login
+  - Secure user access control
 
-Optimization
-Intel® OpenVINO™
+---
 
-Deployment
-Vercel / Docker
+### ⚡ Optimization
+  - Faster inference
+  - Optimized CPU performance
+
+---
+
+### 🚀 Deployment
+- **Vercel**
+- **Docker**
 
 ## 🚀 Getting Started
 Prerequisites
