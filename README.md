@@ -1,14 +1,12 @@
-<p align="center">
+<img width="959" height="400" alt="image" src="https://github.com/user-attachments/assets/fe73bb4f-196b-47c3-b987-3a751704d42d" /><p align="center">
   <img src="https://img.shields.io/badge/Project-Truth%20Seeker-blueviolet?style=for-the-badge" />
   <img src="https://img.shields.io/badge/AI-Deepfake%20Detection-red?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/github/license/Khushal-93/truth-seeker" />
-  <img src="https://img.shields.io/github/stars/Khushal-93/truth-seeker" />
-  <img src="https://img.shields.io/github/forks/Khushal-93/truth-seeker" />
-</p>
+<img src="https://img.shields.io/github/license/Khushal-93/truth-seeker" />
+<img src="https://img.shields.io/github/stars/Khushal-93/truth-seeker" />
+<img src="https://img.shields.io/github/forks/Khushal-93/truth-seeker" />
 
 # 🕵️ Truth Seeker (DeepGuard)
 
