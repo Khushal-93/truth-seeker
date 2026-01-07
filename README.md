@@ -110,7 +110,7 @@ Python 3.9+
 
 pip
 
-Clone repository
+## Clone repository
 ```bash
 git clone https://github.com/Khushal-93/truth-seeker.git
 cd truth-seeker
