@@ -1,11 +1,4 @@
-<p align="center">
-  <img 
-    src="https://github.com/user-attachments/assets/fe73bb4f-196b-47c3-b987-3a751704d42d"
-    alt="Truth Seeker Banner"
-    width="959"
-    height="400"
-  />
-</p>
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/Project-Truth%20Seeker-blueviolet?style=for-the-badge" />
