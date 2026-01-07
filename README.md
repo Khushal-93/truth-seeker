@@ -1,24 +1,36 @@
+<h1 align="center">
+  🛡️ TRUTH SEEKER <span style="color:#00E5FF">(DEEPGUARD)</span>
+</h1>
 
 <p align="center">
-  <img 
-    src="https://github.com/Khushal-93/truth-seeker/blob/main/public/Deeepfake.png"
-    alt="Truth Seeker (DeepGuard) Banner"
-    width="100%"
-  />
-</p>
-
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Project-Truth%20Seeker-blueviolet?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/AI-Deepfake%20Detection-red?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
+  <b>AI-powered Deepfake Detection System</b><br/>
+  <i>Expose fake media. Protect digital truth.</i>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/license/Khushal-93/truth-seeker" />
-  <img src="https://img.shields.io/github/stars/Khushal-93/truth-seeker" />
-  <img src="https://img.shields.io/github/forks/Khushal-93/truth-seeker" />
+  ⚡ Detects AI-manipulated images & videos<br/>
+  🔍 Confidence-based real vs fake analysis<br/>
+  🌐 Built for social media & digital platforms
 </p>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&pause=1000&color=00E5FF&center=true&vCenter=true&width=520&lines=Detect+Deepfakes+in+Seconds;AI+for+Digital+Truth;Stop+Misinformation+Before+It+Spreads" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/AI-Deepfake%20Detection-00E5FF?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Active-00C853?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Trust-Verified-FFD600?style=for-the-badge" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/license/Khushal-93/truth-seeker?style=flat-square" />
+  <img src="https://img.shields.io/github/stars/Khushal-93/truth-seeker?style=flat-square" />
+  <img src="https://img.shields.io/github/forks/Khushal-93/truth-seeker?style=flat-square" />
+</p>
+
+<hr/>
+
 
 ---
 
