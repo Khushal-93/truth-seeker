@@ -94,13 +94,28 @@ Python 3.9+
 
 pip
 
-Installation
+Clone repository
+```bash
 git clone https://github.com/Khushal-93/truth-seeker.git
 cd truth-seeker
-pip install -r requirements_server.txt
+```
 
-Run the Project
+## Backend setup
+```bash
+pip install -r requirements_server.txt
 python server.py
+```
+
+## Frontend setup
+```
+npm install
+npm run dev
+```
+
+## Run the Project
+```
+python server.py
+```
 
 ## 📂 Project Structure
 ```bash
