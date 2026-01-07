@@ -126,8 +126,9 @@ truth-seeker/
 ├── server.py
 ├── requirements_server.txt
 ├── README.md
+```
 
-📊 Project Status
+## 📊 Project Status
 ✔ Image Deepfake Detection
 
 ✔ Video Deepfake Detection
@@ -135,13 +136,13 @@ truth-seeker/
 🔄 Model Accuracy Improvements (Ongoing)
 
 ## 👥 Team 
-Khushal Choudhary – Frontend & UI
+** Khushal Choudhary – Frontend & UI **
 
-Tushar kumar – ML & Model Integration
+** Tushar kumar – ML & Model Integration **
 
-Pushkar Shinde – Backend & APIs
+** Pushkar Shinde – Backend & APIs **
 
-Ruchita Naik - PPT and coordination
+** Ruchita Naik - PPT and coordination **
 
-📜 License
+## 📜 License
 This project is licensed under the MIT License.
