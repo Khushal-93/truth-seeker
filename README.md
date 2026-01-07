@@ -1,22 +1,30 @@
-<img width="959" height="400" alt="image" src="https://github.com/user-attachments/assets/fe73bb4f-196b-47c3-b987-3a751704d42d" /><p align="center">
+<p align="center">
+  <img 
+    src="https://github.com/user-attachments/assets/fe73bb4f-196b-47c3-b987-3a751704d42d"
+    alt="Truth Seeker Banner"
+    width="959"
+    height="400"
+  />
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Project-Truth%20Seeker-blueviolet?style=for-the-badge" />
   <img src="https://img.shields.io/badge/AI-Deepfake%20Detection-red?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
 </p>
 
-<img src="https://img.shields.io/github/license/Khushal-93/truth-seeker" />
-<img src="https://img.shields.io/github/stars/Khushal-93/truth-seeker" />
-<img src="https://img.shields.io/github/forks/Khushal-93/truth-seeker" />
-
-# 🕵️ Truth Seeker (DeepGuard)
-
-**Truth Seeker** is an AI-powered system designed to detect deepfake images and videos with high accuracy, helping prevent misinformation, fraud, and digital manipulation.
-
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Khushal-93/truth-seeker/main/public/Deepfake.png" 
-       alt="Deepfake Detection Illustration" 
-       width="600" />
+  <img src="https://img.shields.io/github/license/Khushal-93/truth-seeker" />
+  <img src="https://img.shields.io/github/stars/Khushal-93/truth-seeker" />
+  <img src="https://img.shields.io/github/forks/Khushal-93/truth-seeker" />
 </p>
+
+---
+
+# 🛡️ Truth Seeker (DeepGuard)
+
+**Truth Seeker (DeepGuard)** is an AI-powered system designed to detect deepfake images and videos with high accuracy.  
+It helps prevent misinformation, fraud, and digital manipulation on social media and digital pl
 
 
 ## 🏗️ System Architecture
