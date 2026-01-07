@@ -17,7 +17,7 @@
   <b>AI‑Powered System to Detect Deepfake Images & Videos</b><br/>
   Preventing misinformation, fraud, and digital manipulation
 </p>
-<p align = "center">
+
 # 🛡️ Truth Seeker (DeepGuard)
 
 **Truth Seeker (DeepGuard)** is an AI-powered system designed to detect deepfake images and videos with high accuracy.  
@@ -188,4 +188,4 @@ Please ensure your code follows the project structure and does not break existin
 ## 📜 License
 This project is licensed under the MIT License.
 
-</p>
+
