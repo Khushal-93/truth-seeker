@@ -47,3 +47,85 @@ flowchart TD
     B --> C[Deepfake Detection Model]
     C --> D[Confidence Scoring Engine]
     D --> E[Final Prediction: Real / Fake]
+```
+---
+
+ Key Features
+🔍 AI-based deepfake image & video detection
+
+⚡ High-performance optimized models
+
+📊 Confidence score with predictions
+
+🔐 Secure & privacy-focused processing
+
+📈 Scalable architecture for future upgrades
+
+🧰 Tech Stack
+Frontend
+HTML, CSS, JavaScript
+
+React (if applicable)
+
+Backend
+Python
+
+FastAPI / Flask
+
+AI / ML
+CNN / Transformer-based models
+
+Authentication (Google)
+- Firebase Authentication (Email & Password)
+
+OpenCV
+
+PyTorch / TensorFlow
+
+Optimization
+Intel® OpenVINO™
+
+Deployment
+Vercel / Docker
+
+🚀 Getting Started
+Prerequisites
+Python 3.9+
+
+pip
+
+Installation
+git clone https://github.com/Khushal-93/truth-seeker.git
+cd truth-seeker
+pip install -r requirements_server.txt
+
+Run the Project
+python server.py
+
+📂 Project Structure
+truth-seeker/
+├── public/
+├── src/
+├── video_deepfake/
+├── server.py
+├── requirements_server.txt
+├── README.md
+
+📊 Project Status
+✔ Image Deepfake Detection
+
+✔ Video Deepfake Detection
+
+🔄 Model Accuracy Improvements (Ongoing)
+
+👥 Team 
+Khushal Choudhary – Frontend & UI
+
+Tushar kumar – ML & Model Integration
+
+Pushkar Shinde – Backend & APIs
+
+Ruchita Naik - PPT and coordination
+
+📜 License
+This project is licensed under the MIT License.
