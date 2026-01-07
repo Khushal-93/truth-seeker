@@ -132,6 +132,8 @@ npm run dev
 python server.py
 ```
 
+---
+
 ## 📂 Project Structure
 ```bash
 truth-seeker/
@@ -143,6 +145,8 @@ truth-seeker/
 ├── README.md
 ```
 
+---
+
 ## 📊 Project Status
 
 ✔ Image Deepfake Detection
@@ -150,6 +154,8 @@ truth-seeker/
 ✔ Video Deepfake Detection
 
 🔄 Model Accuracy Improvements (Ongoing)
+
+---
 
 ## 👥 Team 
 
@@ -160,5 +166,25 @@ truth-seeker/
 | Pushkar Shinde | Backend & APIs |
 | Ruchita Naik | PPT and coordination |
 
+---
+
+## 🤝 Contributing
+
+Contributions are welcome and appreciated!  
+If you have ideas to improve **Truth Seeker / DeepGuard**, feel free to contribute.
+
+### How to Contribute
+1. Fork this repository
+2. Create a new branch (`git checkout -b feature-name`)
+3. Make your changes
+4. Commit your changes (`git commit -m "Add feature"`)
+5. Push to your branch (`git push origin feature-name`)
+6. Open a Pull Request
+
+Please ensure your code follows the project structure and does not break existing functionality.
+
+---
+
 ## 📜 License
 This project is licensed under the MIT License.
+
