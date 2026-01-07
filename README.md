@@ -128,7 +128,7 @@ npm install
 npm run dev
 ```
 
-## Run the Project
+## Start the Server
 ```
 python server.py
 ```
