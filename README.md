@@ -23,11 +23,7 @@
   <img src="https://img.shields.io/badge/Trust-Verified-FFD600?style=for-the-badge" />
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/github/license/Khushal-93/truth-seeker?style=flat-square" />
-  <img src="https://img.shields.io/github/stars/Khushal-93/truth-seeker?style=flat-square" />
-  <img src="https://img.shields.io/github/forks/Khushal-93/truth-seeker?style=flat-square" />
-</p>
+
 
 <hr/>
 
