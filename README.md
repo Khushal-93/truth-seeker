@@ -177,6 +177,12 @@ truth-seeker/
 
 ---
 
+## 🎙️ Voice Over Credit
+
+Special thanks to **Riya Patil** for providing the voice-over for our official YouTube project video.
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome and appreciated!  
